@@ -19,7 +19,8 @@
 function register() {
     return new Promise((res, rej) => {
         setTimeout(() => {
-            console.log("user register")
+            console.log("user registering")
+
             res()
         }, 5000)
     })
@@ -74,11 +75,21 @@ function displayUserData() {
 //         })
 //     })
 // })
-register()
-    .then(sendemail)
-    .then(login)
-    .then(getUserData)
-    .then(displayUserData)
+// register()
+//     .then(sendemail)
+//     .then(login)
+//     .then(getUserData)
+//     .then(displayUserData).catch((err) => {
+//         console.log("err", err)
+//     })
 
+async function authenticate() {
+    await register()
+    await sendemail()
+    await login()
+    await getUserData()
+    await displayUserData()
+}
 
+authenticate()
 console.log("other application work")
