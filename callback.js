@@ -28,8 +28,8 @@ function register() {
 function sendemail() {
     return new Promise((res, rej) => {
         setTimeout(() => {
-            console.log("email send")
             rej('error while sending email')
+
         }, 3000);
     })
 
@@ -84,16 +84,19 @@ function displayUserData() {
 //     })
 
 async function authenticate() {
-    await register()
-    await sendemail()
-    await login()
-    await getUserData()
-    await displayUserData()
+    try {
+        await register()
+        await sendemail()
+        await login()
+        await getUserData()
+        await displayUserData()
+
+    } catch (error) {
+        console.log(error)
+
+    }
+
 }
 
-authenticate().then(() => {
-    console.log("all work done")
-}).catch((err) => {
-    console.log(err)
-})
+authenticate()
 console.log("other application work")
