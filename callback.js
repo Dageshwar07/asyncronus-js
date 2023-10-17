@@ -29,7 +29,7 @@ function sendemail() {
     return new Promise((res, rej) => {
         setTimeout(() => {
             console.log("email send")
-            res()
+            rej('error while sending email')
         }, 3000);
     })
 
@@ -91,5 +91,9 @@ async function authenticate() {
     await displayUserData()
 }
 
-authenticate()
+authenticate().then(() => {
+    console.log("all work done")
+}).catch((err) => {
+    console.log(err)
+})
 console.log("other application work")
