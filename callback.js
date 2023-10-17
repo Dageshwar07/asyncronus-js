@@ -13,6 +13,7 @@ function waitForThreeSecond() {
     }
 }
 
+
 waitForThreeSecond()
 
 function register() {
@@ -32,7 +33,10 @@ function login() {
 
 }
 function getUserData() {
-    console.log("get user data")
+    setTimeout(() => {
+        console.log("get user data")
+
+    }, 3000);
 
 }
 function displayUserData() {
