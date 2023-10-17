@@ -4,7 +4,6 @@
  * login
  * getuser data
  * display user data
- * 
 */
 
 function waitForThreeSecond() {
@@ -13,6 +12,7 @@ function waitForThreeSecond() {
 
     }
 }
+
 waitForThreeSecond()
 
 function register() {
@@ -22,10 +22,14 @@ function register() {
 }
 function sendemail() {
     console.log("email send")
+    waitForThreeSecond()
+
 
 }
 function login() {
     console.log("user can login")
+    waitForThreeSecond()
+
 }
 function getUserData() {
     console.log("get user data")
@@ -35,6 +39,7 @@ function displayUserData() {
 
     console.log("display user data")
 }
+
 register()
 sendemail()
 login()
